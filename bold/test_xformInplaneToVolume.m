@@ -82,15 +82,15 @@ assertEqual(val.mapdim, size(map));
 assertEqual(val.tSdim, size(tSeries));
 
 % check the median value of the coherence map and mean map
-assertElementsAlmostEqual(val.comed,nanmedian(co));
-assertElementsAlmostEqual(val.mapmed,nanmedian(map));
-assertElementsAlmostEqual(val.tSmed,nanmedian(nanmedian(tSeries)));
+assertElementsAlmostEqual(val.comed,nanmedian(co), 5);
+assertElementsAlmostEqual(val.mapmed,nanmedian(map), 5);
+assertElementsAlmostEqual(val.tSmed,nanmedian(nanmedian(tSeries)), 5);
 
 % check the values of the mean map and coherence map for an arbitrary voxel
 % (to make sure the sequence is correct)
-assertElementsAlmostEqual(val.cosample, co(1000));
-assertElementsAlmostEqual(val.mapsample, map(1000));
-assertElementsAlmostEqual(val.tSsample, tSeries(1000));
+assertElementsAlmostEqual(val.cosample, co(1000), 5);
+assertElementsAlmostEqual(val.mapsample, map(1000), 5);
+assertElementsAlmostEqual(val.tSsample, tSeries(1000), 5);
 
 
 %% Cleanup
